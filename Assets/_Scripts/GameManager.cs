@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : SingletonMonoBehavior<GameManager>
@@ -12,6 +13,15 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     private bool isSettingsActive = false;
 
     public bool IsSettingsActive => isSettingsActive;
+
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 
     protected override void Awake()
     {
