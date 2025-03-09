@@ -79,5 +79,8 @@ crashlytics-build.properties
 # Jetbrains Rider
 .idea/
 
+# MacOS
+.DS_Store
+
 # Vscode
 .vscode/
