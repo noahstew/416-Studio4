@@ -19,14 +19,14 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         inputManager.OnSettingsMenu.AddListener(ToggleSettingsMenu);
-        DisableSeetingsMenu();
+        DisableSettingsMenu();
     }
 
     private void ToggleSettingsMenu()
     {
         if (isSettingsActive)
         {
-            DisableSeetingsMenu();
+            DisableSettingsMenu();
         }
         else
         {
@@ -43,7 +43,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         isSettingsActive = true;
     }
 
-    private void DisableSeetingsMenu()
+    public void DisableSettingsMenu()
     {
         Time.timeScale = 1f;
         settingsMenu.SetActive(false);
